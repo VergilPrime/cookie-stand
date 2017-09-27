@@ -2,7 +2,7 @@
 
 var random = function(min, max){
   return( Math.round(Math.random() * (max - min) + min));
-}
+};
 
 var times = [
   '6 AM',
@@ -166,6 +166,7 @@ var StoreEntry = function(locationName, minPerCust, maxPerCust, avgCookiePerSale
     var endTotal = 0;
     for(var i = 0; i < times.length; i++) {
       var randomNum = random( this.minPerCust , this.maxPerCust );
+      randomNum = Math.round(randomNum * this.avgCookiePerSale);
       this.salesPerHour.push( randomNum );
       endTotal += randomNum;
     };
