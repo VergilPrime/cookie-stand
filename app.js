@@ -34,15 +34,6 @@ var locationArray = [
     maxPerCust: 65,
     avgCookiePerSale: 6.3,
     salesPerHour: [],
-    total: function() {
-      endTotal = 0;
-      for (var index in this.salesPerHour){
-        endTotal += this.salesPerHour[index];
-        console.log(endTotal);
-      }
-      console.log(endTotal)
-      return(endTotal);
-    },
     returnAll: function() {
       console.log('returning All')
       console.log(this.minPerCust)
@@ -64,15 +55,6 @@ var locationArray = [
     maxPerCust: 24,
     avgCookiePerSale: 1.2,
     salesPerHour: [],
-    total: function() {
-      endTotal = 0;
-      for (var index in this.salesPerHour){
-        endTotal += this.salesPerHour[index];
-        console.log(endTotal);
-      }
-      console.log(endTotal)
-      return(endTotal);
-    },
     returnAll: function() {
       console.log('returning All')
       console.log(this.minPerCust)
@@ -94,15 +76,6 @@ var locationArray = [
     maxPerCust: 38,
     avgCookiePerSale: 3.7,
     salesPerHour: [],
-    total: function() {
-      endTotal = 0;
-      for (var index in this.salesPerHour){
-        endTotal += this.salesPerHour[index];
-        console.log(endTotal);
-      }
-      console.log(endTotal)
-      return(endTotal);
-    },
     returnAll: function() {
       console.log('returning All')
       console.log(this.minPerCust)
@@ -124,15 +97,6 @@ var locationArray = [
     maxPerCust: 38,
     avgCookiePerSale: 2.3,
     salesPerHour: [],
-    total: function() {
-      endTotal = 0;
-      for (var index in this.salesPerHour){
-        endTotal += this.salesPerHour[index];
-        console.log(endTotal);
-      }
-      console.log(endTotal)
-      return(endTotal);
-    },
     returnAll: function() {
       console.log('returning All')
       console.log(this.minPerCust)
@@ -154,15 +118,6 @@ var locationArray = [
     maxPerCust: 16,
     avgCookiePerSale: 4.6,
     salesPerHour: [],
-    total: function() {
-      endTotal = 0;
-      for (var index in this.salesPerHour){
-        endTotal += this.salesPerHour[index];
-        console.log(endTotal);
-      }
-      console.log(endTotal)
-      return(endTotal);
-    },
     returnAll: function() {
       console.log('returning All')
       console.log(this.minPerCust)
@@ -186,4 +141,41 @@ for( index in locationArray) {
 
 }
 
-//test code below this point
+//test constructor code below this point
+
+var StoreEntry = function(locationName, minPerCust, maxPerCust, avgCookiePerSale) {
+  locationName = locationName;
+  minPerCust = minPerCust;
+  maxPerCust = maxPerCust;
+  avgCookiePerSale = avgCookiePerSale;
+  salesPerHour = [];
+  returnAll = function() {
+    console.log('returning All')
+    console.log(this.minPerCust)
+    var endTotal = 0
+    for(var index in times) {
+      var randomNum = random( this.minPerCust , this.maxPerCust )
+      this.salesPerHour.push( randomNum );
+      endTotal += randomNum;
+    };
+    this.salesPerHour.push(endTotal);
+
+    console.log(this.salesPerHour);
+  }
+}
+
+var LocationArrayConst = []
+
+// 1st and Pike	23	65	6.3
+// SeaTac Airport	3	24	1.2
+// Seattle Center	11	38	3.7
+// Capitol Hill	20	38	2.3
+// Alki	2	16	4.6
+
+LocationArrayConst.push(StoreEntry('1st and Pike', 23, 65, 6.3))
+LocationArrayConst.push(StoreEntry('SeaTac Airport', 3, 24, 1.2))
+LocationArrayConst.push(StoreEntry('Seattle Center', 11, 38, 3.7))
+LocationArrayConst.push(StoreEntry('Capitol Hill', 20, 38, 2.3))
+LocationArrayConst.push(StoreEntry('1st and Pike', 2, 16, 4.6))
+
+console.table(LocationArrayConst)
