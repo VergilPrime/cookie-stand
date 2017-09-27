@@ -21,34 +21,6 @@ var times = [
   '9 PM'
 ]
 
-var baseStats = {
-  firstAndPike: {
-    minPerCust: 23,
-    maxPerCust: 65,
-    avgCookiePerSale: 6.3
-  },
-  seatac: {
-    minPerCust: 3,
-    maxPerCust: 24,
-    avgCookiePerSale: 1.2
-  },
-  seattleCenter: {
-    minPerCust: 11,
-    maxPerCust: 38,
-    avgCookiePerSale: 3.7
-  },
-  capitolHill: {
-    minPerCust: 20,
-    maxPerCust: 38,
-    avgCookiePerSale: 2.3
-  },
-  alki: {
-    minPerCust: 2,
-    maxPerCust: 16,
-    avgCookiePerSale: 4.6
-  },
-}
-
 // 1st and Pike	23	65	6.3
 // SeaTac Airport	3	24	1.2
 // Seattle Center	11	38	3.7
@@ -57,28 +29,159 @@ var baseStats = {
 
 var locationArray = [
   {
-    locationID: 'firstAndPike',
     locationName: '1st And Pike',
+    minPerCust: 23,
+    maxPerCust: 65,
+    avgCookiePerSale: 6.3,
     salesPerHour: [],
     total: function() {
-      endTotal = 0
+      endTotal = 0;
       for (var index in this.salesPerHour){
         endTotal += this.salesPerHour[index];
         console.log(endTotal);
       }
       console.log(endTotal)
-      return(endTotal)
+      return(endTotal);
     },
     returnAll: function() {
-      for( var i = 0 ; i < times.length ; i++ ) {
-        var locID = this.locationID;
-        var locData = (baseStats.locID);
-        console.log(locID)
-        console.log(baseStats)
-        console.log(locData)
-        this.salesPerHour.push( random( locData.minPerCust , locData.maxPerCust ) );
+      console.log('returning All')
+      console.log(this.minPerCust)
+      var endTotal = 0
+      for(var index in times) {
+        var randomNum = random( this.minPerCust , this.maxPerCust )
+        this.salesPerHour.push( randomNum );
+        endTotal += randomNum;
+      };
+      this.salesPerHour.push(endTotal);
+
+      console.log(this.salesPerHour);
+    }
+  },
+
+  {
+    locationName: 'SeaTac Airport',
+    minPerCust: 3,
+    maxPerCust: 24,
+    avgCookiePerSale: 1.2,
+    salesPerHour: [],
+    total: function() {
+      endTotal = 0;
+      for (var index in this.salesPerHour){
+        endTotal += this.salesPerHour[index];
+        console.log(endTotal);
       }
+      console.log(endTotal)
+      return(endTotal);
+    },
+    returnAll: function() {
+      console.log('returning All')
+      console.log(this.minPerCust)
+      var endTotal = 0
+      for(var index in times) {
+        var randomNum = random( this.minPerCust , this.maxPerCust )
+        this.salesPerHour.push( randomNum );
+        endTotal += randomNum;
+      };
+      this.salesPerHour.push(endTotal);
+
+      console.log(this.salesPerHour);
+    }
+  },
+
+  {
+    locationName: 'Seattle Center',
+    minPerCust: 11,
+    maxPerCust: 38,
+    avgCookiePerSale: 3.7,
+    salesPerHour: [],
+    total: function() {
+      endTotal = 0;
+      for (var index in this.salesPerHour){
+        endTotal += this.salesPerHour[index];
+        console.log(endTotal);
+      }
+      console.log(endTotal)
+      return(endTotal);
+    },
+    returnAll: function() {
+      console.log('returning All')
+      console.log(this.minPerCust)
+      var endTotal = 0
+      for(var index in times) {
+        var randomNum = random( this.minPerCust , this.maxPerCust )
+        this.salesPerHour.push( randomNum );
+        endTotal += randomNum;
+      };
+      this.salesPerHour.push(endTotal);
+
+      console.log(this.salesPerHour);
+    }
+  },
+
+  {
+    locationName: 'CapitolHill',
+    minPerCust: 20,
+    maxPerCust: 38,
+    avgCookiePerSale: 2.3,
+    salesPerHour: [],
+    total: function() {
+      endTotal = 0;
+      for (var index in this.salesPerHour){
+        endTotal += this.salesPerHour[index];
+        console.log(endTotal);
+      }
+      console.log(endTotal)
+      return(endTotal);
+    },
+    returnAll: function() {
+      console.log('returning All')
+      console.log(this.minPerCust)
+      var endTotal = 0
+      for(var index in times) {
+        var randomNum = random( this.minPerCust , this.maxPerCust )
+        this.salesPerHour.push( randomNum );
+        endTotal += randomNum;
+      };
+      this.salesPerHour.push(endTotal);
+
+      console.log(this.salesPerHour);
+    }
+  },
+
+  {
+    locationName: 'Alki',
+    minPerCust: 2,
+    maxPerCust: 16,
+    avgCookiePerSale: 4.6,
+    salesPerHour: [],
+    total: function() {
+      endTotal = 0;
+      for (var index in this.salesPerHour){
+        endTotal += this.salesPerHour[index];
+        console.log(endTotal);
+      }
+      console.log(endTotal)
+      return(endTotal);
+    },
+    returnAll: function() {
+      console.log('returning All')
+      console.log(this.minPerCust)
+      var endTotal = 0
+      for(var index in times) {
+        var randomNum = random( this.minPerCust , this.maxPerCust )
+        this.salesPerHour.push( randomNum );
+        endTotal += randomNum;
+      };
+      this.salesPerHour.push(endTotal);
+
       console.log(this.salesPerHour);
     }
   }
-]
+];
+
+
+
+for( index in locationArray) {
+  var houseSalesSheet = locationArray[index].returnAll()
+
+}
