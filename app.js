@@ -43,6 +43,7 @@ var locationArray = [
       var endTotal = 0;
       for(var i = 0; i < times.length; i++) {
         var randomNum = random( this.minPerCust , this.maxPerCust );
+        randomNum = Math.round(randomNum * this.avgCookiePerSale);
         this.salesPerHour.push( randomNum );
         endTotal += randomNum;
       };
@@ -65,6 +66,7 @@ var locationArray = [
       var endTotal = 0;
       for(var i = 0; i < times.length; i++) {
         var randomNum = random( this.minPerCust , this.maxPerCust );
+        randomNum = Math.round(randomNum * this.avgCookiePerSale);
         this.salesPerHour.push( randomNum );
         endTotal += randomNum;
       };
@@ -87,6 +89,7 @@ var locationArray = [
       var endTotal = 0;
       for(var i = 0; i < times.length; i++) {
         var randomNum = random( this.minPerCust , this.maxPerCust );
+        randomNum = Math.round(randomNum * this.avgCookiePerSale);
         this.salesPerHour.push( randomNum );
         endTotal += randomNum;
       };
@@ -109,6 +112,7 @@ var locationArray = [
       var endTotal = 0;
       for(var i = 0; i < times.length; i++) {
         var randomNum = random( this.minPerCust , this.maxPerCust );
+        randomNum = Math.round(randomNum * this.avgCookiePerSale);
         this.salesPerHour.push( randomNum );
         endTotal += randomNum;
       };
@@ -131,6 +135,7 @@ var locationArray = [
       var endTotal = 0;
       for(var i = 0; i < times.length; i++) {
         var randomNum = random( this.minPerCust , this.maxPerCust );
+        randomNum = Math.round(randomNum * this.avgCookiePerSale);
         this.salesPerHour.push( randomNum );
         endTotal += randomNum;
       };
