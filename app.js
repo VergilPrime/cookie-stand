@@ -32,6 +32,7 @@ var times = [
 var locationArray = [
   {
     locationName: '1st And Pike',
+    locationId: 'first-and-pike',
     minPerCust: 23,
     maxPerCust: 65,
     avgCookiePerSale: 6.3,
@@ -53,6 +54,7 @@ var locationArray = [
 
   {
     locationName: 'SeaTac Airport',
+    locationId: 'seatac',
     minPerCust: 3,
     maxPerCust: 24,
     avgCookiePerSale: 1.2,
@@ -74,6 +76,7 @@ var locationArray = [
 
   {
     locationName: 'Seattle Center',
+    locationId: 'seattle-center',
     minPerCust: 11,
     maxPerCust: 38,
     avgCookiePerSale: 3.7,
@@ -95,6 +98,7 @@ var locationArray = [
 
   {
     locationName: 'Capitol Hill',
+    locationId: 'capitol-hill',
     minPerCust: 20,
     maxPerCust: 38,
     avgCookiePerSale: 2.3,
@@ -116,6 +120,7 @@ var locationArray = [
 
   {
     locationName: 'Alki',
+    locationId: 'alki',
     minPerCust: 2,
     maxPerCust: 16,
     avgCookiePerSale: 4.6,
@@ -136,9 +141,17 @@ var locationArray = [
   }
 ];
 
-
-
 for(var index in locationArray) {
+  // populate hourly sales
   locationArray[index].returnAll();
 
+  // get unordered list by id
+  var id = locationArray[index].locationId;
+  var ulEl = document.getElementById(id);
+  // +1 is for totals
+  for(var i = 0; i < times.length + 1; i++) {
+    var liEl = document.createElement('li');
+    liEl.textContent = locationArray[index].salesPerHour[i];
+    ulEl.appendChild(liEl);
+  }
 }
