@@ -1,7 +1,9 @@
 td {
   border-style: solid;
   border-radius: 2px;
-  margin-left: 0px;
-  margin-right: 0px;
+  padding: 5px;
+  width: 50px;
+  height: 40px;
+  align-content: center;
   /*I have no idea what I am doing*/
 }
