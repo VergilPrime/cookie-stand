@@ -1,3 +1,7 @@
+table {
+  align-content: center;
+}
+
 td {
   border-style: solid;
   border-radius: 2px;
@@ -5,5 +9,19 @@ td {
   width: 50px;
   height: 40px;
   align-content: center;
-  /*I have no idea what I am doing*/
+}
+#form-header {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.form-label {
+  width: 20%;
+  text-align: right;
+}
+
+.input-box {
+  float: right;
+  text-align: right;
 }
