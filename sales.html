@@ -11,46 +11,48 @@
     <table id="sales-charts"> <h2> Sales Charts </h2> </table>
 
     <form id="add-store-form" action="app.js" method="get">
-      <table>
-        <tr>
-          <td colspan="5">
-            <h2 id="form-header"> Add Franchise </h2>
-          </td>
-        </tr>
-        <tr>
-          <td class="form-label">
-            <h4> Store Name </h4>
-          </td>
-          <td class="form-label">
-            <h4> Estimated Customers (Low End) </h4>
-          </td>
-          <td class="form-label">
-            <h4> Estimated Customers (High End) </h4>
-          </td>
-          <td class="form-label">
-            <h4> Estimated Cookie Sales Per Visitor </h4>
-          </td>
-          <td class="form-label">
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input class="input-box"type="text" name="store-name" size="30" maxlength="30"/>
-          </td>
-          <td>
-            <input class="input-box"type="number" name="min-per-cust" min="0" max="200" size="2"/>
-          </td>
-          <td>
-            <input class="input-box"type="number" name="max-per-cust" min="0" max="200" size="2"/>
-          </td>
-          <td>
-            <input class="input-box"type="number" name="avg-cookie-per" min="0" max="200" size="2"/>
-          </td>
-          <td>
-            <button class="input-box"> Submit </button>
-          </td>
-        </tr>
-      </table>
+      <fieldset>
+        <table>
+          <tr>
+            <td colspan="5">
+              <h2 id="form-header"> Add Franchise </h2>
+            </td>
+          </tr>
+          <tr>
+            <td class="form-label">
+              <h4> Store Name </h4>
+            </td>
+            <td class="form-label">
+              <h4> Estimated Customers (Low End) </h4>
+            </td>
+            <td class="form-label">
+              <h4> Estimated Customers (High End) </h4>
+            </td>
+            <td class="form-label">
+              <h4> Estimated Cookie Sales Per Visitor </h4>
+            </td>
+            <td class="form-label">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input id="input-store-name" class="input-box"type="text" name="store-name" size="30" maxlength="30"/>
+            </td>
+            <td>
+              <input id="input-minimum" class="input-box"type="number" name="min-per-cust" min="0" max="200" size="2"/>
+            </td>
+            <td>
+              <input id="input-maximum" class="input-box"type="number" name="max-per-cust" min="0" max="200" size="2"/>
+            </td>
+            <td>
+              <input id="input-average" class="input-box"type="number" name="avg-cookie-per" min="0" max="200" size="2"/>
+            </td>
+            <td>
+              <button id="submit" type="submit" class="input-box"> Submit </button>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
     </form>
 
     <script type="text/javascript" src="app.js">

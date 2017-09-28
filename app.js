@@ -1,10 +1,45 @@
 'use strict';
 
+var addStoreForm = document.getElementById('add-store-form');
+
+var locationArray = [];
+
+var times = ['6 AM','7 AM','8 AM','9 AM','10 AM','11 AM','12 PM','1 PM','2 PM','3 PM','4 PM','5 PM','6 PM','7 PM','8 PM','9 PM'];
+
 var random = function(min, max){
   return( Math.round(Math.random() * (max - min) + min));
 };
 
-var times = ['6 AM','7 AM','8 AM','9 AM','10 AM','11 AM','12 PM','1 PM','2 PM','3 PM','4 PM','5 PM','6 PM','7 PM','8 PM','9 PM'];
+var update = function(event/*locationName,minPerCust,maxPerCust,avgCookiePerSale*/){
+
+  console.log(event);
+  // var match = false;
+  // for(var i = 0; i < locationArray.length; i++) {
+  //   if(store.locationName === locationName){
+  //     match = true;
+  //     var index = i;
+  //     //break?
+  //   }
+  // }
+  // if(match) {
+  //   locationArray[index].minPerCust = minPerCust;
+  //   locationArray[index].maxPerCust = maxPerCust;
+  //   locationArray[index].avgCookiePerSale = avgCookiePerSale;
+  //   locationArray[index].tableRow = [this.locationName];
+  //   var endTotal = 0;
+  //   for(i = 0; i < times.length; i++){
+  //     var randomNum = random(locationArray[index].minPerCust , locationArray[index].maxPerCust);
+  //     randomNum = Math.round(randomNum * locationArray[index].avgCookiePerSale);
+  //     locationArray[index].tableRow.push(times[i] + ': ' + randomNum);
+  //     endTotal += randomNum;
+  //   };
+  //   locationArray[index].tableRow.push('total: ' + endTotal);
+  //   alert('Location Updated');
+  // } else {
+  //   locationArray.push(new Store(locationName,minPerCust,maxPerCust,avgCookiePerSale));
+  //   alert('Location Added');
+  // }
+};
 
 // 1st and Pike	23	65	6.3
 // SeaTac Airport	3	24	1.2
@@ -27,8 +62,6 @@ function Store(locationName,minPerCust,maxPerCust,avgCookiePerSale) {
   };
   this.tableRow.push('total: ' + endTotal);
 };
-
-var locationArray = [];
 // 1st and Pike	23	65	6.3
 locationArray.push(new Store('1st and Pike',23,65,6.3));
 // SeaTac Airport	3	24	1.2
@@ -55,3 +88,5 @@ for(var row in locationArray) {
     rowElement.appendChild(dataElement);
   }
 }
+
+addStoreForm.addEventListener('submit',update);
