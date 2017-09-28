@@ -2,7 +2,7 @@
 
 var random = function(min, max){
   return( Math.round(Math.random() * (max - min) + min));
-}
+};
 
 var times = [
   '6 AM',
