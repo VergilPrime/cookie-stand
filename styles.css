@@ -1,3 +1,78 @@
+* {
+  /*border-style: solid;*/
+  border-radius: 1px;
+}
+
+html {
+  padding: 0px;
+  background-color: rgb(231, 189, 106);
+}
+
+body {
+  margin: 0px;
+}
+
+header {
+  background-color: rgb(165, 34, 34);
+  border-style: solid;
+  border-radius: 1px;
+  border-color: rgb(165, 34, 34);
+}
+
+header img {
+  float: right;
+  height: 100%;
+  margin: 0px;
+}
+
+h1 {
+  color: rgb(124, 6, 6);
+}
+
+nav {
+  width: 30%;
+  display: inline-block;
+  background-image: url("resources/TwoFish.png");
+  background-size: contain;
+  background-blend-mode: luminosity;
+  background-color: rgb(124, 59, 6);
+}
+
+p {
+  width: 60%;
+  display: inline-block;
+}
+
+li {
+  background-image: url("resources/listgraphic.png");
+  width: 270px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  font-size: 20px;
+  color: rgb(231, 189, 106);
+}
+
+.topli {
+  background-image:url("resources/listgraphictop.png");
+}
+
+.bottomli {
+  background-image:url("resources/listgraphicbottom.png");
+}
+
+a {
+  display: flex;
+  vertical-align: middle;
+  color:rgb(79,102,2);
+}
+
+img {
+  width: 30%;
+  height: 400px;
+}
+
 td {
   border-style: solid;
   border-radius: 2px;
