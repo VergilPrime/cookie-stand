@@ -23,7 +23,7 @@ var update = function(event/*locationName,minPerCust,maxPerCust,avgCookiePerSale
   if(match) {
     locationArray.splice(matchIndex,1);
   }
-  locationArray.push(new Store(
+  locationArray.splice(0,0,new Store(
     event.target.storename.value,
     event.target.minpercust.value,
     event.target.maxpercust.value,
@@ -71,16 +71,12 @@ function Store(locationName,minPerCust,maxPerCust,avgCookiePerSale) {
   };
   this.tableRow.push('total: ' + endTotal);
 };
-// 1st and Pike	23	65	6.3
-locationArray.push(new Store('1st and Pike',23,65,6.3));
-// SeaTac Airport	3	24	1.2
-locationArray.push(new Store('SeaTac Airport',3,24,1.2));
-// // Seattle Center	11	38	3.7
+
 locationArray.push(new Store('Seattle Center',11,38,3.7));
-// // Capitol Hill	20	38	2.3
+locationArray.push(new Store('SeaTac Airport',3,24,1.2));
 locationArray.push(new Store('Capitol Hill',20,38,2.3));
-// // Alki	2	16	4.6
 locationArray.push(new Store('Alki',2,16,4.6));
+locationArray.push(new Store('1st and Pike',23,65,6.3));
 
 updateTable();
 
