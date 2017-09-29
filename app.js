@@ -11,36 +11,45 @@ var random = function(min, max){
 };
 
 var update = function(event/*locationName,minPerCust,maxPerCust,avgCookiePerSale*/){
-
-  console.log(event);
-  // var match = false;
-  // for(var i = 0; i < locationArray.length; i++) {
-  //   if(store.locationName === locationName){
-  //     match = true;
-  //     var index = i;
-  //     //break?
-  //   }
-  // }
-  // if(match) {
-  //   locationArray[index].minPerCust = minPerCust;
-  //   locationArray[index].maxPerCust = maxPerCust;
-  //   locationArray[index].avgCookiePerSale = avgCookiePerSale;
-  //   locationArray[index].tableRow = [this.locationName];
-  //   var endTotal = 0;
-  //   for(i = 0; i < times.length; i++){
-  //     var randomNum = random(locationArray[index].minPerCust , locationArray[index].maxPerCust);
-  //     randomNum = Math.round(randomNum * locationArray[index].avgCookiePerSale);
-  //     locationArray[index].tableRow.push(times[i] + ': ' + randomNum);
-  //     endTotal += randomNum;
-  //   };
-  //   locationArray[index].tableRow.push('total: ' + endTotal);
-  //   alert('Location Updated');
-  // } else {
-  //   locationArray.push(new Store(locationName,minPerCust,maxPerCust,avgCookiePerSale));
-  //   alert('Location Added');
-  // }
+  event.preventDefault();
+  var match = false;
+  console.log(event.target.storename.value);
+  for(var i = 0; i < locationArray.length; i++){
+    if(locationArray[i].locationName === event.target.storename.value){
+      match = true;
+      var matchIndex = i;
+    }
+  }
+  if(match) {
+    locationArray.splice(matchIndex,1);
+  }
+  locationArray.push(new Store(
+    event.target.storename.value,
+    event.target.minpercust.value,
+    event.target.maxpercust.value,
+    event.target.avgcookieper.value
+  ));
+  updateTable();
 };
 
+var updateTable = function() {
+  // get table by id
+  var tableElement = document.getElementById('sales-charts');
+  tableElement.innerHTML = '';
+  for(var row in locationArray) {
+    var rowElement = document.createElement('tr');
+    tableElement.appendChild(rowElement);
+    for(var i = 0; i < locationArray[row].tableRow.length; i++) {
+      if(i === 0 || i === locationArray[row].tableRow.length - 1){
+        var dataElement = document.createElement('th');
+      } else {
+        var dataElement = document.createElement('td');
+      }
+      dataElement.textContent = locationArray[row].tableRow[i];
+      rowElement.appendChild(dataElement);
+    }
+  }
+};
 // 1st and Pike	23	65	6.3
 // SeaTac Airport	3	24	1.2
 // Seattle Center	11	38	3.7
@@ -73,20 +82,6 @@ locationArray.push(new Store('Capitol Hill',20,38,2.3));
 // // Alki	2	16	4.6
 locationArray.push(new Store('Alki',2,16,4.6));
 
-// get table by id
-var tableElement = document.getElementById('sales-charts');
-for(var row in locationArray) {
-  var rowElement = document.createElement('tr');
-  tableElement.appendChild(rowElement);
-  for(var i = 0; i < locationArray[row].tableRow.length; i++) {
-    if(i === 0 || i === locationArray[row].tableRow.length - 1){
-      var dataElement = document.createElement('th');
-    } else {
-      var dataElement = document.createElement('td');
-    }
-    dataElement.textContent = locationArray[row].tableRow[i];
-    rowElement.appendChild(dataElement);
-  }
-}
+updateTable();
 
 addStoreForm.addEventListener('submit',update);

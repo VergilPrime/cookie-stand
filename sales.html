@@ -10,7 +10,7 @@
 
     <table id="sales-charts"> <h2> Sales Charts </h2> </table>
 
-    <form id="add-store-form" action="app.js" method="get">
+    <form id="add-store-form">
       <fieldset>
         <table>
           <tr>
@@ -36,19 +36,19 @@
           </tr>
           <tr>
             <td>
-              <input id="input-store-name" class="input-box"type="text" name="store-name" size="30" maxlength="30"/>
+              <input class="input-box" type="text" name="storename" size="30" maxlength="30"/>
             </td>
             <td>
-              <input id="input-minimum" class="input-box"type="number" name="min-per-cust" min="0" max="200" size="2"/>
+              <input class="input-box" type="number" name="minpercust" min="0" max="200" size="2"/>
             </td>
             <td>
-              <input id="input-maximum" class="input-box"type="number" name="max-per-cust" min="0" max="200" size="2"/>
+              <input class="input-box" type="number" name="maxpercust" min="0" max="200" size="2"/>
             </td>
             <td>
-              <input id="input-average" class="input-box"type="number" name="avg-cookie-per" min="0" max="200" size="2"/>
+              <input class="input-box" type="number" name="avgcookieper" min="0" max="200" size="2"/>
             </td>
             <td>
-              <button id="submit" type="submit" class="input-box"> Submit </button>
+              <button type="submit" class="input-box"> Submit </button>
             </td>
           </tr>
         </table>
