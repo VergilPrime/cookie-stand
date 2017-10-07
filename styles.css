@@ -19,28 +19,35 @@ header {
   border-color: rgb(165, 34, 34);
 }
 
-header img {
-  float: right;
-  height: 100%;
-  margin: 0px;
-}
-
 h1 {
+  font-size: 50px;
+  margin: 10px;
+  display: inline-block;
   color: rgb(124, 6, 6);
 }
 
+header img {
+
+  float: right;
+  height: 70px;
+  width: 70px;
+}
+
 nav {
-  width: 30%;
-  display: inline-block;
-  background-image: url("resources/TwoFish.png");
+  float: left;
+  width: 25%;
   background-size: contain;
-  background-blend-mode: luminosity;
+  /*background-blend-mode: luminosity;*/
   background-color: rgb(124, 59, 6);
 }
 
 p {
   width: 60%;
   display: inline-block;
+}
+
+ul {
+  list-style: none;
 }
 
 li {
@@ -54,23 +61,30 @@ li {
   color: rgb(231, 189, 106);
 }
 
-.topli {
+li:first-child {
   background-image:url("resources/listgraphictop.png");
 }
 
-.bottomli {
+li:last-child {
   background-image:url("resources/listgraphicbottom.png");
 }
 
 a {
   display: flex;
   vertical-align: middle;
-  color:rgb(79,102,2);
+  color: rgb(231, 189, 106);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(231, 189, 106);
+  text-decoration: none;
 }
 
 img {
   width: 30%;
   height: 400px;
+}
 
 table {
   align-content: center;
